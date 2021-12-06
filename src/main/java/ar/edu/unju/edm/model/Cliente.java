@@ -97,6 +97,15 @@ public class Cliente{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public int getEdad() {
+		int edad = 0;
+		LocalDate fechahoy = LocalDate.now();
+		Period periodo = Period.between(fechaNacimiento, fechahoy);
+		edad = periodo.getYears();		
+		return edad;
+
+	}
 
 	@Override
 	public int hashCode() {
